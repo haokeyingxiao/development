@@ -1,0 +1,48 @@
+{
+    "name": "snap-store/production",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "composer-runtime-api": "^2.0",
+        "snap-store/administration": "*",
+        "snap-store/core": "6.6.x-dev",
+        "snap-store/elasticsearch": "*",
+        "snap-store/storefront": "*"
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "custom/plugins/*",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "custom/plugins/*/packages/*",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "custom/static-plugins/*",
+            "options": {
+                "symlink": true
+            }
+        }
+    ],
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "symfony/runtime": true
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "extra": {
+        "symfony": {
+        }
+    }
+}
