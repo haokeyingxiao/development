@@ -18,3 +18,8 @@
 /install.lock
 public/asset-manifest.json
 ###< shopware/core ###
+
+custom
+!/custom/scripts/boot
+!/custom/scripts/examples
+files/*
