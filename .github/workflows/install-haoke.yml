@@ -1,0 +1,41 @@
+name: install haoke
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.repository == 'haokeyingxiao/haoke'
+    env:
+      SHOPWARE_ADMIN_SKIP_SOURCEMAP_GENERATION: "1"
+      DATABASE_URL: mysql://root:root@127.0.0.1:3306/root
+    services:
+      database:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: root
+        options: '--mount="type=tmpfs,destination=/var/lib/mysql" --health-cmd="mysqladmin ping -h 127.0.0.1" --health-interval=5s --health-timeout=2s --health-retries=3'
+        ports:
+          - "3306:3306"
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: "0"
+          fetch-tags: "true"
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          coverage: none
+          extensions: gd, xml, dom, curl, pdo, mysqli, mbstring, pdo_mysql, bcmath
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: build haoke
+        run: |
+          composer setup

@@ -1,1 +1,2 @@
-# SnapStore 开发模板
+# HaoKe 6 development template
+

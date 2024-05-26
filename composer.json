@@ -1,13 +1,13 @@
 {
-    "name": "snap-store/production",
-    "license": "MIT",
+    "name": "haokeyingxiao/development",
+    "license": "Apache-2.0",
     "type": "project",
     "require": {
         "composer-runtime-api": "^2.0",
-        "snap-store/administration": "*",
-        "snap-store/core": "6.6.x-dev",
-        "snap-store/elasticsearch": "*",
-        "snap-store/storefront": "*"
+        "haokeyingxiao/administration": "*",
+        "haokeyingxiao/core": "6.6.x-dev",
+        "haokeyingxiao/elasticsearch": "*",
+        "haokeyingxiao/storefront": "*"
     },
     "minimum-stability": "dev",
     "repositories": [

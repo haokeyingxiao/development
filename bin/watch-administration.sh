@@ -55,8 +55,8 @@ else
     echo "Cannot check extensions for required npm installations as jq is not installed"
 fi
 
-if [ ! -d vendor/snap-store/administration/Resources/app/administration/node_modules/webpack-dev-server ]; then
-    npm install --prefix vendor/snap-store/administration/Resources/app/administration/
+if [ ! -d vendor/haokeyingxiao/administration/Resources/app/administration/node_modules/webpack-dev-server ]; then
+    npm install --prefix vendor/haokeyingxiao/administration/Resources/app/administration/
 fi
 
 # Dump entity schema
@@ -66,4 +66,4 @@ if [[ -z "${SHOPWARE_SKIP_ENTITY_SCHEMA_DUMP:-""}" ]] && [[ -f "${ADMIN_ROOT}"/R
   (cd "${ADMIN_ROOT}"/Resources/app/administration && npm run convert-entity-schema)
 fi
 
-npm run --prefix vendor/shopware/administration/Resources/app/administration/ dev
+npm run --prefix vendor/haokeyingxiao/administration/Resources/app/administration/ dev

@@ -26,10 +26,10 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export DISABLE_ADMIN_COMPILATION_TYPECHECK=true
 export PROJECT_ROOT="${PROJECT_ROOT:-"$(dirname "$CWD")"}"
 
-if [[ -e "${PROJECT_ROOT}/vendor/snap-store/platform" ]]; then
-    ADMIN_ROOT="${ADMIN_ROOT:-"${PROJECT_ROOT}/vendor/snap-store/platform/src/Administration"}"
+if [[ -e "${PROJECT_ROOT}/vendor/haokeyingxiao/platform" ]]; then
+    ADMIN_ROOT="${ADMIN_ROOT:-"${PROJECT_ROOT}/vendor/haokeyingxiao/platform/src/Administration"}"
 else
-    ADMIN_ROOT="${ADMIN_ROOT:-"${PROJECT_ROOT}/vendor/snap-store/administration"}"
+    ADMIN_ROOT="${ADMIN_ROOT:-"${PROJECT_ROOT}/vendor/haokeyingxiao/administration"}"
 fi
 
 BIN_TOOL="${CWD}/console"
