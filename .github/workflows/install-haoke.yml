@@ -37,4 +37,5 @@ jobs:
           node-version: 20
       - name: build haoke
         run: |
-          composer setup
+          composer install
+          php ./bin/console system:install -f --basic-setup --drop-database --create-database
